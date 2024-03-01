@@ -1,0 +1,32 @@
+Debouncing
+
+typing slow - 200ms
+typing fase - 30ms
+
+performance :
+  -iphone pro max = 14 letter * 1000 = 14000
+  -with Debouncing = 3 api * 1000 = 3000
+
+
+Debouncing with 200ms
+  -if difference between 2 key strokes is < 200ms - Decline Api calls
+   > 200ms makes a api call
+
+
+
+//make a api call after every key press
+    //but if the difference between 2 api call is < 200ms
+    //if else then decline the api call
+
+
+  // #About Debouncing
+  // key stroke - i
+  // - render the Component
+  // - useEffect()
+  // - start timer -> make api call after 200ms
+
+  // key stroke - ip
+  // - destroy the component (useEffect return method) effective if and only if p key is pressed before the 200ms timer expired or else it will try to destroy the timer which is already expired with an api call made
+  // - re-render the component
+  // - useEffect
+  // - start timer -> make api call after 200ms
